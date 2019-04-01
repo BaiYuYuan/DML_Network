@@ -29,7 +29,7 @@ class ParameterServer:
         self._init_socket_conn()  # 和计算节点建立连接
         self._init_send_rec_queues()  # 创建用于接受数据的队列
         self.create_send_rec_threads()  # 每个通信节点创建两个进程（负责收、发）
-        self.create_avg_calc_thread()  # 创建参数服务器用于计算机平均梯度或者loss的线程
+        self.create_avg_calc_thread()  # 创建参数服务器用于计算平均梯度或者loss的线程
         self._start_send_rec_threads()  # 开启进程
         self._notify_clients()  # 通知所有的计算节点可以开始发送数据
         self._start_avg_calc_thread()  # 开启计算平均梯度的线程
